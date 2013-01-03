@@ -5,6 +5,7 @@
 		<title>ifxoxo.com</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<script src="./ifxoxo_files/jquery.min.js"></script>
+		<script src="./ifxoxo_files/jqcloud-1.0.2.min.js"></script>
 
 		<!-- for iphone-->
 		<meta name="viewport" content="initial-scale=1">
@@ -12,6 +13,7 @@
 		<meta name="format-detection" content="telephone=no">   
 
 		<link rel="stylesheet" type="text/css" media="all" href="./ifxoxo_files/style.css">
+		<!-- <link rel="stylesheet" type="text/css" media="all" href="./ifxoxo_files/jqcloud.css"> -->
 
 	</head>
 	<body class="custom-background">
@@ -89,9 +91,7 @@
 
 		<div id="content">
 			<div class="title">标签</div>
-			<div class="all-tag">
-				<img src="./ifxoxo_files/tag.jpg"/>
-			</div>
+			<div id="all-tag"></div>
 			<div class="articles-tag">
 				<div class="tag">php</div>
 				<ul class="article-list">
@@ -419,7 +419,34 @@
 			</div><!--eof footer-container-->
 		</div><!--eof footer-->
 
-		
+		<script type="text/javascript">
+
+
+	 var word_list = [  
+	        {text: "php", weight: 13, link: "https://github.com/lucaong/jQCloud"},  
+	        {text: "css", weight: 10.5, link: "http://jquery.com/"},  
+	        {text: "javascript", weight: 9.4},  
+	        {text: "用户体验", weight: 8},  
+	        {text: "mysql", weight: 6.2},  
+	        {text: "tapd", weight: 5},  
+	        {text: "Adipiscing", weight: 5},  
+	        {text: "Elit", weight: 5},  
+	        {text: "Nam et", weight: 5},  
+	        {text: "Leo", weight: 4},  
+	        {text: "Sapien", weight: 4, link: "http://www.lucaongaro.eu/"},  
+	        {text: "Pellentesque", weight: 3},  
+	        {text: "habitant", weight: 3},  
+	        {text: "morbi", weight: 3},  
+	        {text: "tristisque", weight: 3},  
+	        {text: "senectus", weight: 3},  
+	        {text: "et netus", weight: 3} 
+	         ];  
+
+	     	$(document).ready(function(){
+	          	$("#all-tag").jQCloud(word_list);  
+	     	});
+	
+		</script>
 
 	</body>
 </html>
