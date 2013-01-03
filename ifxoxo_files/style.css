@@ -440,35 +440,6 @@ body {
 .articles-tag .article-list li{
 	background-color: #f4f4f4;
 }
-
-
-/* = Back To Top
------------------------------------------------ */
-.back-to-top {
-	position: fixed;
-	bottom: 0;
-	right: 15px;
-	z-index: 150;
-	height: 100%;
-}
-
-.back-to-top a {
-	display: inline-block;
-	height: 41px;
-	width: 41px;
-	bottom: 50px;
-	right: 0;
-	cursor: pointer;
-	position: absolute;
-	background: #cccccc url(images/ued-sprites.png) -43px -268px no-repeat;
-	-webkit-transition: background-color 0.3s linear;
-	-moz-transition: background-color 0.3s linear;
-	-o-transition: background-color 0.3s linear;
-}
-.back-to-top a:hover {
-	background-color: #ff5f3e;
-}
-
 /* = Footer
 ----------------------------------------------- */
 .footer-container {
@@ -476,3 +447,31 @@ body {
 	margin: 22px 0;
 }
 
+
+/* = Back To Top
+----------------------------------------------- */
+#back-to-top {
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	z-index: 150;
+	height: 100%;
+	display: none;
+}
+
+#back-to-top a {
+	display: inline-block;
+	height: 41px;
+	width: 41px;
+	bottom: 50px;
+	right: 0;
+	cursor: pointer;
+	position: absolute;
+	background: #cccccc url(images/ifxoxo-sprites.png) -43px -268px no-repeat;
+	-webkit-transition: background-color 0.3s linear;
+	-moz-transition: background-color 0.3s linear;
+	-o-transition: background-color 0.3s linear;
+}
+#back-to-top a:hover {
+	background-color: #6abd78;
+}

@@ -421,5 +421,27 @@
 			<div><p>Design By <a href="http://weibo.com/dearqiuying" target="_blank">Miselle</a></p></div>
 			</div><!--eof footer-container-->
 		</div><!--eof footer-->
+
+		<div id="back-to-top" ><a href="#top"></a></div><!--eof back-to-top-->
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				// display back-to-top
+				$(window).scroll(function(){
+					if($(window).scrollTop() > 200){
+						$("#back-to-top").show();
+					} else {
+						$("#back-to-top").hide();
+					}
+				});
+
+				$("#back-to-top").click(function(){
+					window.scrollTo(0,0);
+					return false;
+				});
+
+			});
+		</script>
 	</body>
 </html>
