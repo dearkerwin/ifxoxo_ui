@@ -99,6 +99,10 @@ body {
 	margin-left: 325px;
 	padding: 30px 0;
 }
+.content-single {
+	overflow: hidden;
+	display: block !important;
+}
 #footer {
 	zoom:1;
 	overflow: hidden;
@@ -485,7 +489,7 @@ body {
 /* =post  Detail
 ----------------------------------------------- */
 .content-single .container {
-	min-width: 580px;
+	/*min-width: 580px;*/
 	_width: 600px;
 	margin: 0 100px 0 0;
 }
@@ -504,43 +508,55 @@ body {
 	font-size: 18px;
 	font-weight: bold;
 	line-height: 24px;
-	font-family: Microsoft YaHei;
+	margin: 0 10px;
 }
-.entry-header .author-icon {
+/*.entry-header .author-icon {
 	width: 50px;
 	height: 50px;
 	position: absolute;
 }
 .title-author-time-tags {
-	padding: 0 15px 0 65px;
+	padding: 0 15px;
 	display: inline-block;
 	max-width: 750px;
 	min-width: 450px;
-}
-.entry-header .author-time {
+}*/
+.entry-header .entry-relative {
 	color: #aaaaaa;
 	font-size: 12px;
 	margin: 4px 0;
 }
-.entry-header .author-time a {
-	color: inherit;
+.entry-header .entry-relative a {
+	color: #6abd78;
 }
+.entry-header .entry-relative a:hover {
+	color: #006600;
+}
+.entry-header .entry-relative  p{
+	display: inline-block;
+	margin: 0 10px;
+}
+.entry-header .entry-relative  .tag{
+	/*display: inline-block;*/
+	margin: 0 10px 0 0;
+}
+
 
 
 /*  entry-content */
 .article-container .entry-content {
 	max-width: 1030px;
-	min-width: 431px;
+	/*min-width: 431px;*/
 	min-height: 502px;
 	padding: 20px 0 120px;
 	color: #4a4a4a;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	font-size: 14px;
 }
 
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
 	font-weight: bold;
-	font-family: Microsoft YaHei;
+	/*font-family: Microsoft YaHei;*/
 }
 .entry-content code, .entry-content kbd, .entry-content pre, .entry-content samp, .entry-content tt {
 	font-family: Courier New, Courier, monospace;
