@@ -203,8 +203,9 @@ body {
 	width: 100%;
 }
 .menu-container .menu-item-span:hover, .menu-container .menu-current-item{
-	/*background: url('images/icon.png') no-repeat -6px -53px;*/
-	background-color: #e7e7e7 ;
+	margin-left: 4px;
+	background: url('images/icon.png') no-repeat -10px -91px;
+	/*background-color: #e7e7e7 ;*/
 	-webkit-transition: background-color 0.3s linear;
 	-moz-transition: background-color 0.3s linear;
 	-o-transition: background-color 0.3s linear;
