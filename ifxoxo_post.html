@@ -277,11 +277,7 @@
 			        <div id="comments-title">
 			        	<div class="title-all">
 		        			全部评论: <span class="highlight">7</span>条        	
-		        		</div>|
-		                <div class="social-login">
-		        		使用社交帐号登录：
-		        			<a href="http://ued.taobao.com/blog/wp-content/plugins/wp-connect/login.php?go=sina&redirect_url=http%3A%2F%2Fued.taobao.com%2Fblog%2F2012%2F12%2Fkissy-1-3-0-released%2F" title="微博登录" class="weibo-login">微博登录</a>
-		        		</div> <!--eof title-all -->
+		        		</div><!--eof title-all -->
 		                <div class="separate-line"></div>
 		        	</div><!-- #comments-title -->
 
@@ -470,28 +466,22 @@
 				<a href="javascript:void(0)" id="J_RespondAnchor" class="respond-anchor"></a>
 
  				<div id="respond">
-					<form action="#" method="post" name="commentForm" id="J_CommentForm">
-						<!-- <div class="comment-avatar">
-							<img alt='' src='http://tp3.sinaimg.cn/1875510074/50/0/1' class='avatar avatar-32' height='32' width='32' />
-						</div> -->
+					<form action="#" method="post" name="commentForm" id="commentForm">
 						<div class="input-container">
-							<textarea class="comment" name="comment" id="J_Comment" placeholder="说点什么吧..."></textarea>
-
-							<!-- <div class="toolbar">
-								<div class="replyto" id="J_ReplyTo">
-									<a class="author-to-reply" href="javascript:void(0)" title="" id="J_AuthorToReply"></a>
-									<a class="del-replyto" href="javascript:void(0)" title="" id="J_DelReplyTo"></a>
-								</div>
-							</div> -->
+							<div class="nick">
+								<!-- <label for="author">昵称<span>*</span></label> -->
+								<input id="author" name="author" type="text" size="30" placeholder="留下芳名吧..">
+							</div>
+							<div class="email">
+								<!-- <label for="email">Email<span>*</span></label> -->
+								<input id="email" name="email" type="text"  size="30" placeholder="不要忘了填email喔..">
+							</div>
+							<!-- <label for="comment">评论<span>*</span></label> -->
+							<textarea class="comment" name="comment" id="comment" placeholder="说点什么吧..."></textarea>
 						</div>
 						<div class="op-container">
-							<input type="submit" name="submit" id="J_Submit" class="submit" value="发  布"  onclick="return checkForm();">
-												<!-- <span class="share">
-									<input type="checkbox" name="weiboShare" id="J_WeiboShare">
-									<input type="hidden" name="sync_comment" value="" id="J_SyncComment">
-									<a href="javascript:void(0)" id="J_WeiboShareLink">分享到微博</a>
-								</span> -->
-										</div>
+							<input type="submit" name="submit" id="submit" class="submit" value="发  布" >
+						</div>
 						<input type="hidden" name="comment_post_ID" value="6413" id="comment_post_ID">
 						<input type="hidden" name="comment_parent" value="0" id="comment_parent">
 						<input type="hidden" name="comment_userid" value="446" id="comment_userid">
@@ -515,22 +505,73 @@
 
 		<script type="text/javascript">
 			$(document).ready(function(){
-
-				// display back-to-top
-				$(window).scroll(function(){
-					if($(window).scrollTop() > 200){
-						$("#back-to-top").show();
-					} else {
-						$("#back-to-top").hide();
-					}
+				$("#submit").click(function(){
+					return checkForm();
+				});
+				$("#author").blur(function(){
+					checkAuthor();
+				});
+				$("#email").blur(function(){
+					checkEmail();
+				});
+				$("#comment").blur(function(){
+					checkComment();
 				});
 
-				$("#back-to-top").click(function(){
-					window.scrollTo(0,0);
-					return false;
-				});
 
 			});
+
+			function checkForm() {
+				var checkSign = 0;
+				checkSign += checkAuthor();
+				checkSign += checkEmail();
+				checkSign += checkComment();
+				return (checkSign < 3) ? false : true;
+			}
+
+			function checkAuthor() {
+				var authorValue = $.trim($("#author").val());
+				if(authorValue.length <= 0) {
+					setRedBorder("author");
+					return false;
+				} else {
+					removeRedBorder("author");
+					return true;
+				}
+			}
+			function checkEmail() {
+				var authorValue = $.trim($("#email").val());
+				if(authorValue.length <= 0) {
+					setRedBorder("email");
+					return false;
+				} else {
+					var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+					if(reg.test(authorValue)) {
+						removeRedBorder("email");
+						return true;
+					} else {
+						setRedBorder("email");
+						return false;
+					}
+				}
+			}
+			function checkComment() {
+				var authorValue = $.trim($("#comment").val());
+				if(authorValue.length <= 0) {
+					setRedBorder("comment");
+					return false;
+				} else {
+					removeRedBorder("comment");
+					return true;
+				}
+			}
+
+			function setRedBorder( id ) {
+				$("#"+id).addClass("input-error");
+			}
+			function removeRedBorder( id ) {
+				$("#"+id).removeClass("input-error");
+			}
 		</script>
 	</body>
 </html>

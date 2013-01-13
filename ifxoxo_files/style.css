@@ -108,7 +108,7 @@ body {
 	overflow: hidden;
 	font-size: 12px;
 	background: #fff;
-	border-top: 3px solid #cccccc;
+	border-top: 1px solid #cccccc;
 }
 
 /* = 自适应分辨率 
@@ -151,6 +151,8 @@ body {
 	overflow: hidden;
 	border-bottom: 2px;
 	background-color:#f4f4f4;
+	/*background: url('images/logo.png') no-repeat -10px -91px;*/
+
 }
 .logo a {
 	width: 100%;
@@ -192,23 +194,28 @@ body {
 	padding-left: 45px;
 	width: 152px;
 }
-.menu-container a:hover, .menu-container .menu-current-item{
+.menu-container a:hover, .menu-container .menu-current-item,.menu-container .menu-item-span:hover a{
 	color: #6abd78 !important;
-	font-weight: bold;
+	/*font-weight: bold;*/
 
 }
 .menu-container .menu-item-span{
 	display: block;
 	height: 30px;
-	width: 100%;
+	width: 110%;
+	padding-top: 4px;
 }
 .menu-container .menu-item-span:hover, .menu-container .menu-current-item{
-	margin-left: 4px;
+	margin-left: -5px;
 	background: url('images/icon.png') no-repeat -10px -91px;
 	/*background-color: #e7e7e7 ;*/
-	-webkit-transition: background-color 0.3s linear;
-	-moz-transition: background-color 0.3s linear;
-	-o-transition: background-color 0.3s linear;
+	-webkit-transition: background-color 0.5s linear;
+	-moz-transition: background-color 0.5s linear;
+	-o-transition: background-color 0.5s linear;
+}
+/* 供menu hover的js调用 */
+.menu-container .menu-not-backgroud{
+	background: none;
 }
 .menu-op{
 	margin-top: 20px;
@@ -388,15 +395,16 @@ body {
 }
 .article-relative .op span {
 	display: inline-block;
-	height: 12px;
+	/*width: 13px;*/
+	height: 16px;
 	line-height: 10px;
-	padding-left: 14px;
+	padding-left: 20px;
 	text-decoration: none;
-	background-image: url(images/ifxoxo-sprites.png);
+	background-image: url(images/icon.png);
 	background-repeat: no-repeat;
 }
 .article-relative .date, .article-relative .op span {
-	color: #fdfdfd;
+	color: #888;
 }
 .article-relative .op a:hover {
 	color: #ff5f3e;
@@ -405,18 +413,18 @@ body {
 .article-relative .op .comment {
 	margin-left: 10px;
 }
-.article-relative .like a {
-	background-position: 0 0;
+.article-relative .view-count  {
+	background-position: -13px -227px;
 }
-.article-relative .comment a {
-	background-position: 0 -35px;
+.article-relative .comment  {
+	background-position: -9px -393px;
 }
-.article-relative .like a:hover {
+/*.article-relative .like a:hover {
 	background-position: 0 -18px;
 }
 .article-relative .comment a:hover {
 	background-position: 0 -53px;
-}
+}*/
 
 
 /* =article tag 
@@ -458,7 +466,7 @@ body {
 ----------------------------------------------- */
 .footer-container {
 	text-align: center;
-	margin: 22px 0;
+	margin: 10px 0;
 }
 
 
@@ -730,11 +738,20 @@ body {
 	border-top:  1px dashed #CAD4D6;
 }
 #respond .input-container {
-	margin-left: 40px;
+	/*margin-left: 40px;*/
 	position: relative;
 }
+#respond input{
+	border: 1px solid #DDD;
+	height: 30px;
+	width: 300px;
+	padding: 0 10px;
+	margin: 5px 0;
+	font-size: 14px;
+	background: #fdfdfd;
+}
 #respond .comment {
-	margin: 0;
+	margin: 10px 0;
 	width: 98%;
 	border: 1px solid #DDDDDD;
 	resize: vertical;
@@ -743,23 +760,38 @@ body {
 	overflow: auto;
 	color: #777;
 	background: #fdfdfd;
+	font-size: 14px;
 	 /*url(images/comment-input-bg.png) bottom repeat-x;*/
 }
+
+#respond input:focus, #respond .comment:focus{
+	border: 2px solid #6ABD78;
+	border-radius: 2px;
+}
+#respond .input-error {
+	border: 1px solid red;
+}
+/*#respond .input-container label{
+	display: block;
+	width: 40px;
+}
+#respond .input-container label span{
+	color: red;
+	margin-left: 4px;
+}*/
 #respond .op-container{
-	margin: 20px 20px;
+	margin: 10px 0;
 }
 #respond .op-container .submit{
 	
-	margin-left: 20px;
-	
-	
+	/*margin-left: 20px;*/
 	display: inline-block;
 	border: none;
 	color: #fff;
 	font-size: 20px;
 	cursor:pointer;
-	background: url('images/icon.png') no-repeat 0 -303px;
-	width: 111px;
+	background: url('images/icon.png') no-repeat  -10px -303px;
+	width: 101px;
 	height: 35px;
 
 	/*background: #6ABD78;

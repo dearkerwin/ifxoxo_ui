@@ -2,7 +2,7 @@
 <!-- saved from url=(0058)http://ued.taobao.com/blog/category/bowen/frontend/page/2/ -->
 <html lang="zh-CN" version="g42dymwpi--nx">
 	<head>
-		<title>ifxoxo.com</title>
+		<title>ifxoxo.com|技术，另一种意淫，未满八岁，请勿进入</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<script src="./ifxoxo_files/jquery.min.js"></script>
 
@@ -18,8 +18,8 @@
 		<div id="nav">
 			<div class="logo">
 				<a href="http://ued.taobao.com/blog/" title="ifxoxo.com">
-					LOGO
-					<!-- <img src="./ifxoxo_files/blog-logo.png" alt="ifxoxo.com"> -->
+					
+					<img src="./ifxoxo_files/images/logo2.png" alt="ifxoxo.com">
 				</a>
 			</div>
 			<div class="menu-container">
@@ -30,7 +30,7 @@
 							</div>
 						</li>
 						<li class="menu-item cat-item">
-							<div class="menu-item-span menu-item-hover menu-current-item">
+							<div class="menu-item-span menu-item-hover menu-current-item ">
 								<a title='blog' href="blog.ifxoxo.com">学习札记</a>
 							</div>
 							<ul class="children">
@@ -78,7 +78,7 @@
 					</form>
 				</div><!--end of search-->
 				<div class="op">
-					<a href="rss" class="rss" target="_blank">rss </a>
+					<a href="rss" class="rss" target="_blank"></a>
 
 					<a class="weibo" target="_blank" href="http://weibo.com/dearkelvin"></a>
 				</div>
@@ -110,7 +110,7 @@
 							<div class="article-relative">
 								<span class="date">2012/03/15</span>
 								<div class="op">
-                					<span class="view-count" title="浏览数">24</span>
+                					<span class="view-count" title="浏览数">2422</span>
                 					<span class="comment" title="评论">3</span>
 	               				</div>
 							</div><!--eof article-relative-->
@@ -426,8 +426,15 @@
 
 		<script type="text/javascript">
 			$(document).ready(function(){
+				backToTop();
+				menuCurrentHover();
+			}); //eof ready
 
-				// display back-to-top
+			/**
+			 *back-to-top
+			 */
+			function backToTop() {
+				
 				$(window).scroll(function(){
 					if($(window).scrollTop() > 200){
 						$("#back-to-top").show();
@@ -435,13 +442,30 @@
 						$("#back-to-top").hide();
 					}
 				});
-
 				$("#back-to-top").click(function(){
 					window.scrollTo(0,0);
 					return false;
 				});
+			}
 
-			});
+			/**
+			 *控制menu hover的事件
+			 *
+			 */
+			function menuCurrentHover() {
+				$(".menu-item-hover").mouseover(function(){
+					if( $(this).hasClass("menu-current-item"))  {
+						// $(".menu-current-item").attr("style","");						
+					} else {				
+						$(".menu-current-item").addClass("menu-not-backgroud");
+					}					
+				});
+				$(".menu-item-hover").mouseout(function(){
+					$(".menu-current-item").removeClass("menu-not-backgroud");						
+				});
+
+			}
+
 		</script>
 	</body>
 </html>
